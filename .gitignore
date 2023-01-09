@@ -13,7 +13,6 @@ Backend/OnlineEnergyUtilityPlateform/OnlineEnergyUtilityPlateform/.vs/ProjectEva
 *.dll
 *.editorconfig
 *.cache
-*.cs
 *.props
 *.nupkg
 
