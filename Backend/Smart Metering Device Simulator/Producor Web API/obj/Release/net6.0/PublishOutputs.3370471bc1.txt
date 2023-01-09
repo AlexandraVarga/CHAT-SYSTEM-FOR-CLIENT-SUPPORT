@@ -1,0 +1,13 @@
+D:\upwork\Alexandra Varga\DS2022_Group_LastName_FirstName_Assignment_Number\Backend\Smart Metering Device Simulator\Producor Web API\obj\Release\net6.0\PubTmp\Out\Producor Web API.exe
+D:\upwork\Alexandra Varga\DS2022_Group_LastName_FirstName_Assignment_Number\Backend\Smart Metering Device Simulator\Producor Web API\obj\Release\net6.0\PubTmp\Out\appsettings.Development.json
+D:\upwork\Alexandra Varga\DS2022_Group_LastName_FirstName_Assignment_Number\Backend\Smart Metering Device Simulator\Producor Web API\obj\Release\net6.0\PubTmp\Out\appsettings.json
+D:\upwork\Alexandra Varga\DS2022_Group_LastName_FirstName_Assignment_Number\Backend\Smart Metering Device Simulator\Producor Web API\obj\Release\net6.0\PubTmp\Out\Producor Web API.dll
+D:\upwork\Alexandra Varga\DS2022_Group_LastName_FirstName_Assignment_Number\Backend\Smart Metering Device Simulator\Producor Web API\obj\Release\net6.0\PubTmp\Out\Producor Web API.deps.json
+D:\upwork\Alexandra Varga\DS2022_Group_LastName_FirstName_Assignment_Number\Backend\Smart Metering Device Simulator\Producor Web API\obj\Release\net6.0\PubTmp\Out\Producor Web API.runtimeconfig.json
+D:\upwork\Alexandra Varga\DS2022_Group_LastName_FirstName_Assignment_Number\Backend\Smart Metering Device Simulator\Producor Web API\obj\Release\net6.0\PubTmp\Out\Producor Web API.pdb
+D:\upwork\Alexandra Varga\DS2022_Group_LastName_FirstName_Assignment_Number\Backend\Smart Metering Device Simulator\Producor Web API\obj\Release\net6.0\PubTmp\Out\Microsoft.OpenApi.dll
+D:\upwork\Alexandra Varga\DS2022_Group_LastName_FirstName_Assignment_Number\Backend\Smart Metering Device Simulator\Producor Web API\obj\Release\net6.0\PubTmp\Out\Newtonsoft.Json.dll
+D:\upwork\Alexandra Varga\DS2022_Group_LastName_FirstName_Assignment_Number\Backend\Smart Metering Device Simulator\Producor Web API\obj\Release\net6.0\PubTmp\Out\RabbitMQ.Client.dll
+D:\upwork\Alexandra Varga\DS2022_Group_LastName_FirstName_Assignment_Number\Backend\Smart Metering Device Simulator\Producor Web API\obj\Release\net6.0\PubTmp\Out\Swashbuckle.AspNetCore.Swagger.dll
+D:\upwork\Alexandra Varga\DS2022_Group_LastName_FirstName_Assignment_Number\Backend\Smart Metering Device Simulator\Producor Web API\obj\Release\net6.0\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\upwork\Alexandra Varga\DS2022_Group_LastName_FirstName_Assignment_Number\Backend\Smart Metering Device Simulator\Producor Web API\obj\Release\net6.0\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerUI.dll
