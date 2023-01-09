@@ -1,0 +1,130 @@
+
+<div class="container-fluid pt-5">
+  <div class="row justify-content-center">
+      <div class="col-md-4 col-xl-3 chat">
+          <div class="card mb-sm-3 mb-md-0 contacts_card">
+              <div class="card-header">
+
+                  <ul class="contacts">
+                      <li class="">
+                          <div class="d-flex bd-highlight" >
+                              <div class="img_cont">
+                                  <img src="https://static.turbosquid.com/Preview/001292/481/WV/_D.jpg" class="rounded-circle user_img">
+                                  <span class="online_icon"></span>
+                              </div>
+                              <div class="user_info">
+                                  <span>{{loginFullName}}</span>
+                                   <p>({{isLoginUserRole}})</p>
+                              </div>
+                          </div>
+                          <div class="dropdownIcon">
+                              <i class="fa fa-ellipsis-h fa-pull-right" aria-hidden="true" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
+                              <ul class="dropdown-menu dropdown-menu-right menuList" aria-labelledby="dropdownMenuButton">
+                                  <li><a class="dropdown-item" href="#">My Profile</a></li>
+                                  <li><a class="dropdown-item" style="cursor: pointer;" (click)="onLogout()">Logout</a></li>
+                              </ul>
+                          </div>
+                      </li>
+                  </ul>
+                  <div class="input-group">
+                      <input type="text" placeholder="Search..." name="" class="form-control search">
+                      <div class="input-group-prepend">
+                          <span class="input-group-text search_btn"><i class="fas fa-search"></i></span>
+                      </div>
+                  </div>
+              </div>
+              <div class="card-body contacts_body">
+                  <ul class="contacts">
+                      <li style="cursor: pointer;" [class.active]="item.isActive" *ngFor="let item of users" (click)="openChat(item)">
+                          <div class="d-flex bd-highlight row col-md-12" style="padding: 10px;background-color: #343a40;border-radius: 20px;color: white;">
+                              <div class="img_cont col-md-2">
+                                  <img src="https://static.turbosquid.com/Preview/001292/481/WV/_D.jpg" class="rounded-circle user_img">
+                                  <span class="online_icon" [class.offline]="!item.isOnline"></span>
+                              </div>
+                              <div class="user_info col-md-2">
+                                  <span>{{item.firstName}} {{item.lastName}} <p style="font-size: 10px;">({{item.roleName}})</p></span>
+
+                              </div>
+                              <div class="col-md-6" >
+                              <div *ngFor="let item2 of notificationMessagesCount">
+                                <a href="#" class="notification" *ngIf="(item2?.sender===item.id) && item2?.isNew===true">
+                                  <span class="badge" style="margin-left: 30px;">{{this.notificationValue}}</span>
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                      </li>
+
+                  </ul>
+              </div>
+
+          </div>
+      </div>
+      <div class="col-md-8 col-xl-6 chat">
+          <div class="card">
+              <div class="card-header msg_head " >
+                  <div class="d-flex bd-highlight">
+                      <div class="img_cont">
+
+                          <img src="https://static.turbosquid.com/Preview/001292/481/WV/_D.jpg" class="rounded-circle user_img">
+                          <span class="online_icon"></span>
+                      </div>
+                      <div class="user_info">
+                          <span>{{chatUser?.firstName}} {{chatUser?.lastName}} </span><br>
+                          <span *ngIf="typingMessages===true"> typing...</span>
+                      </div>
+                  </div>
+              </div>
+              <div class="card-body msg_card_body" >
+                  <div *ngFor="let m of displayMessages" >
+                      <div class="messageItem" >
+                          <section>
+                              <i *ngIf="m.type==='recieved'" class="fa fa-ellipsis-h messageListIcon" aria-hidden="true" style="display: none;" id="{{m.id}}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
+                              <ul class="dropdown-menu userList" aria-labelledby="m?.id">
+                                  <li><a class="dropdown-item mouseCursor" (click)="deleteMessage(m,'DeleteForMe',false)">Remove Only For Me</a></li>
+                              </ul>
+                          </section>
+                          <div class="d-flex justify-content-start mb-4" *ngIf="m.type==='recieved' && !m.isReceiverDeleted">
+                              <div class="img_cont_msg">
+                                  <img src="https://static.turbosquid.com/Preview/001292/481/WV/_D.jpg" class="rounded-circle user_img_msg">
+                              </div>
+                              <div class="msg_cotainer">
+                                  {{m.content}}
+                                  <span class="msg_time">{{m.messageDate | date:'medium'}}</span>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="messageItem">
+                          <section>
+                              <i *ngIf="m.type==='sent'" class="fa fa-ellipsis-h messageListIcon" aria-hidden="true" style="display: none;" id="{{m.id}}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
+                              <ul class="dropdown-menu userList" aria-labelledby="m.id">
+                                  <li><a class="dropdown-item mouseCursor" (click)="deleteMessage(m,'DeleteForMe',true)">Remove Only For Me</a></li>
+                                  <li><a class="dropdown-item mouseCursor" (click)="deleteMessage(m,'DeleteForEveryone',true)">Remove For Everyone</a></li>
+                              </ul>
+                          </section>
+
+                          <div class="d-flex justify-content-end mb-4" *ngIf="m.type==='sent' && !m.isSenderDeleted">
+                              <div class="msg_cotainer_send">
+                                  {{m.content}}
+                                  <span class="msg_time_send">{{m.messageDate | date:'medium'}}</span>
+                              </div>
+                              <div class="img_cont_msg">
+                                  <img src="https://static.turbosquid.com/Preview/001292/481/WV/_D.jpg" class="rounded-circle user_img_msg">
+                              </div>
+                          </div>
+                      </div>
+
+                  </div>
+              </div>
+              <div class="card-footer">
+                  <div class="input-group">
+                      <textarea name="" [(ngModel)]="message" class="form-control type_msg" placeholder="Type your message..." (keyup)="typingMessage()"></textarea>
+                      <div class="input-group-append" (click)="SendDirectMessage()">
+                          <span class="input-group-text send_btn"> Send &nbsp;<i class="fas fa-location-arrow"> </i></span>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
